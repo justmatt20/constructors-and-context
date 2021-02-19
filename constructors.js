@@ -15,7 +15,12 @@
 */
 
 // Code here
+function CarFactory(make, model) {
+  this.make = make;
+  this.model = model;
+}
 
+const myCar = new CarFactory('Subaru', 'Baja')
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
@@ -34,7 +39,8 @@ function Employee(name, email, hireDate) {
   */
   
   // Code here
-  
+  const bob = new Employee('Bob', 'bob@gmail.com', '01-02-98');
+  bob();
   ////////// PROBLEM 3 //////////
   
   // Do not edit the code below.
@@ -57,7 +63,15 @@ function Employee(name, email, hireDate) {
   */
   
   // Code here
-  
+  function Car(){
+    this.make = make;
+    this.model = model;
+    this.year = year;
+  }
+  Car.prototype.moveCar = function(){
+
+  }
+
   ////////// PROBLEM 4 //////////
   
   /*
@@ -76,7 +90,13 @@ function Employee(name, email, hireDate) {
   }
   
   // Code here
-  
+
+  const Deadpool = new Movie('Deadpool', 'Action', '85')
+  Movie.prototype.changeRating = function(num){
+    console.log((this.rating + num)/2)
+}
+  changeRating(70)
+
   ////////// PROBLEM 5 //////////
   
   // Write a constructor function called User. This function should take in 4 parameters called name, age, email, and savedPosts in that order. Name and email will be strings, age will be a number and savedPosts will be an array of objects. These objects will each have 3 properties: id (a number), title (a string), and rating (a number between 1 and 5). These objects are the posts that the user will have saved to their account.
@@ -84,6 +104,24 @@ function Employee(name, email, hireDate) {
   // Once the User constructor function is created, write a prototype method for the User function. Name this method addSavedPost. It should take in three parameters: id (a number), title (a string) and rating (a number). Use these parameters to create a new object and add it to the savedPosts array. Make sure to name the properties the same as described previously (id, title, rating).
   
   // Code here
+  function User(name, age, email, savedPosts){
+      this.name = name
+      this.age = age
+      this.email = email
+      this.savedPosts = [savedPosts]
+  };
+
+  User.prototype.addSavedPost = function(id, title, rating){
+      let savedPosts = {
+          id: id;
+          title: title;
+          rating: rating ;
+      }
+  }
+const newPost = new User(addSavedPost)
+newPost.addSavedPost(1224, 'This is probably wrong', 2);
+
+
   
   ////////// PROBLEM 6 //////////
   
