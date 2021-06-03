@@ -19,15 +19,17 @@
 
 //Code Here
 
-// const user = {
-//   username:'tomtom';
-//   email:'tomtom@tom.com';
-//   getUserName: function(){
-//     return this.username;
-//   }
-// }
+const user = {
+  username:'tomtom',
+  email:'tomtom@tom.com',
 
-// getUserName();
+    getUserName: function(){
+    return this.username;
+  }
+  
+}
+
+
 
 ////////// PROBLEM 2 //////////
 

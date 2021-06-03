@@ -40,15 +40,15 @@ function Employee(name, email, hireDate) {
   
   // Code here
   const bob = new Employee('Bob', 'bob@gmail.com', '01-02-98');
-  bob();
+  // bob();
   ////////// PROBLEM 3 //////////
   
   // Do not edit the code below.
   
-  var prius = new Car('Toyota', 'Prius', 2011);
-  var mustang = new Car('Ford', 'Mustang', 2013);
-  prius.moveCar(); // Increments prius' move property by 10. Returns the new move property.
-  mustang.moveCar(); // Increments mustang' move property by 10. Returns the new move property.
+  // var prius = new Car('Toyota', 'Prius', 2011);
+  // var mustang = new Car('Ford', 'Mustang', 2013);
+  // prius.moveCar(); // Increments prius' move property by 10. Returns the new move property.
+  // mustang.moveCar(); // Increments mustang' move property by 10. Returns the new move property.
   
   // Do not edit the code above.
   
@@ -63,14 +63,23 @@ function Employee(name, email, hireDate) {
   */
   
   // Code here
-  function Car(){
+  function Car(make, model, year, move){
     this.make = make;
     this.model = model;
     this.year = year;
+    this.move = 0
   }
-  Car.prototype.moveCar = function(){
 
+  Car.prototype.moveCar = function(){
+    return this.move + 10;
   }
+
+  const prius = new Car('Toyota', 'Prius', 2011);
+  const mustang = new Car('Ford', 'Mustang', 2013);
+
+  prius.moveCar();
+  mustang.moveCar(); 
+
 
   ////////// PROBLEM 4 //////////
   
@@ -86,16 +95,20 @@ function Employee(name, email, hireDate) {
   function Movie(name, genre, rating) {
     this.name = name;
     this.genre = genre;
-    this.rating = rating;
+    this.rating = 85;
   }
   
   // Code here
 
-  const Deadpool = new Movie('Deadpool', 'Action', '85')
+  const Deadpool = new Movie('Deadpool', 'Action', '85');
+
   Movie.prototype.changeRating = function(num){
-    console.log((this.rating + num)/2)
+  return (this.rating + num)/2
+
+
+  console.log(changeRating(70))
 }
-  changeRating(70)
+  
 
   ////////// PROBLEM 5 //////////
   
@@ -105,21 +118,19 @@ function Employee(name, email, hireDate) {
   
   // Code here
   function User(name, age, email, savedPosts){
-      this.name = name
-      this.age = age
-      this.email = email
-      this.savedPosts = [savedPosts]
+      this.name = 'Harrietta',
+      this.age = 54,
+      this.email = 'quiltingQueen@sew.ing',
+      this.savedPosts = []
   };
-
   User.prototype.addSavedPost = function(id, title, rating){
-      let savedPosts = {
-          id: id;
-          title: title;
-          rating: rating ;
-      }
+      return this.savedPosts; 
   }
-const newPost = new User(addSavedPost)
-newPost.addSavedPost(1224, 'This is probably wrong', 2);
+    const newPost = new User(5345, 'Title', 2 )
+
+newPost.addSavedPost()
+
+
 
 
   
@@ -130,10 +141,30 @@ newPost.addSavedPost(1224, 'This is probably wrong', 2);
   
   // Code here
   
+User.prototype.RemoveSavedPost = function(num) {
+  const arrayId = this.addSavedPost.id
+  if (arrayId === num) {
+    return User.splice(arrayId, 1)
+  }
+}
+
+
+
   ////////// PROBLEM 7 //////////
   
   // You will continue to use the constructor function you created in problem 5.
   // Write a prototype method for the User constructor function named changePostRating that will take in two number parameters. The first will be an id (a number) and the second will be the new rating (a number). Use the id to find the matching object in the savedPosts array. Once you find the matching object, update it's rating score with the new rating parameter.
   
   // Code here
+
+  User.prototype.changePostRating= function(id, num2) {
+    if (id) {
+      this.savedPosts.rating = num2
+    }else{
+      return "that user does not exist"
+    }
+  }
   
+  const newRating = new User(2, 7)
+  
+  newRating.changePostRating();
